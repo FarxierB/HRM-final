@@ -26,6 +26,13 @@ public class WerknemerController {
             return werknemerDAO.findWerknemerById(id);
         }
 
+    @GET
+    @Path("/achternaam/{achterNaam}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Werknemer findUserByUsername(@PathParam("achterNaam") String achterNaam) {
+        return werknemerDAO.findWerknemerByAchternaam(achterNaam);
+    }
+
         @POST
         @Path("/add")
         @Consumes(MediaType.APPLICATION_JSON)

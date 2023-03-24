@@ -34,7 +34,7 @@ public class Werknemer {
     @JoinTable(name = "Werknemer_Functie",
             joinColumns = @JoinColumn(name = "werknemer_id"),
             inverseJoinColumns = @JoinColumn(name = "functie_id"))
-    private Set<Functie> functieSet = new HashSet<>();
+    private Set<Functie> functieSet;
 
     public int getWerknemerId() {
         return werknemerId;
@@ -68,12 +68,20 @@ public class Werknemer {
         this.email = email;
     }
 
-    public Set<Functie> getFunctieSet() {
+ /*   public Set<Functie> getFunctieSet() {
         return functieSet;
     }
 
     public void setFunctieSet(Functie functie) {
         this.functieSet.add(functie);
+    }*/
+
+    public Set<Functie> getFunctieSet() {
+        return functieSet;
+    }
+
+    public void setFunctieSet(Set<Functie> functieSet) {
+        this.functieSet = functieSet;
     }
 
     @Override

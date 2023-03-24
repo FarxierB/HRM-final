@@ -31,8 +31,6 @@ public class Functie {
     @JoinColumn(name="afdelingId")
     private Afdeling afdeling;
 
-    @ManyToMany (mappedBy = "functieSet")
-    private Set<Werknemer> werknemerSet =  new HashSet<>();
 
 
 
@@ -60,20 +58,27 @@ public class Functie {
         this.afdeling = afdeling;
     }
 
-    public Set<Werknemer> getWerknemerSet() {
+   /* public Set<Werknemer> getWerknemerSet() {
         return werknemerSet;
     }
 
     public void setWerknemerSet(Werknemer werknemer) {
         this.werknemerSet.add(werknemer);
+    }*/
+
+/*    public Set<Werknemer> getWerknemerSet() {
+        return werknemerSet;
     }
+
+    public void setWerknemerSet(Set<Werknemer> werknemerSet) {
+        this.werknemerSet = werknemerSet;
+    }*/
 
     @Override
     public String toString() {
         return "Functie{" +
                 "FunctieId = " + functieId +
                 ", FunctieType = " + functieType +
-                ", Werknemer = " + werknemerSet +
                 "}";
     }
 }

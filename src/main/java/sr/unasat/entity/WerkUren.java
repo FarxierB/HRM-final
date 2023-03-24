@@ -1,5 +1,6 @@
 package sr.unasat.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,6 +28,7 @@ public class WerkUren {
     @Column(name = "uurLoon")
     private double uurLoon;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "werknemer_id")
     private Werknemer werknemer;
