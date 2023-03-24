@@ -11,6 +11,7 @@ import jakarta.persistence.TypedQuery;
 import java.util.List;
 
 public class AfdelingDAO {
+
     private EntityManager entityManager = JPAConfig.getEntityManager();
     private EntityTransaction transaction = entityManager.getTransaction();
 

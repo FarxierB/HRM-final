@@ -75,4 +75,15 @@ public class Werknemer {
     public void setFunctieSet(Functie functie) {
         this.functieSet.add(functie);
     }
+
+    @Override
+    public String toString() {
+        return "Werknemer{" +
+                "WerknemerId = " + werknemerId +
+                ", VoorNaam = " + voorNaam +
+                ", AchterNaam = " + achterNaam +
+                ", Email = " + email +
+                ", Functie = " + functieSet +
+                "}";
+    }
 }

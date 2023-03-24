@@ -36,4 +36,12 @@ public class Afdeling {
     public void setAfdelingNaam(String afdelingNaam) {
         this.afdelingNaam = afdelingNaam;
     }
+
+    @Override
+    public String toString() {
+        return "Afdeling{" +
+                "AdelingId = " + afdelingId +
+                ", AfdelingNaam = " + afdelingNaam +
+                "}";
+    }
 }

@@ -27,6 +27,10 @@ public class WerkUren {
     @Column(name = "uurLoon")
     private double uurLoon;
 
+    @ManyToOne
+    @JoinColumn(name = "werknemer_id")
+    private Werknemer werknemer;
+
     public int getWerkurenId() {
         return werkurenId;
     }
@@ -59,7 +63,23 @@ public class WerkUren {
         this.uurLoon = uurLoon;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "werknemer_id")
-    private Werknemer werknemer;
+    public Werknemer getWerknemer() {
+        return werknemer;
+    }
+
+    public void setWerknemer(Werknemer werknemer) {
+        this.werknemer = werknemer;
+    }
+
+
+    @Override
+    public String toString() {
+        return "WerkUren{" +
+                "WerkurenId = " + werkurenId +
+                ", Maand = " + maand +
+                ", GewerkteUren = " + gewerkteUren +
+                ", UurLoon = " + uurLoon +
+                ", Werknemer = " + werknemer +
+                "}";
+    }
 }

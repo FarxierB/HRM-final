@@ -67,4 +67,13 @@ public class Functie {
     public void setWerknemerSet(Werknemer werknemer) {
         this.werknemerSet.add(werknemer);
     }
+
+    @Override
+    public String toString() {
+        return "Functie{" +
+                "FunctieId = " + functieId +
+                ", FunctieType = " + functieType +
+                ", Werknemer = " + werknemerSet +
+                "}";
+    }
 }
