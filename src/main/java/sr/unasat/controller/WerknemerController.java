@@ -1,6 +1,7 @@
 package sr.unasat.controller;
 
 import sr.unasat.dao.WerknemerDAO;
+import sr.unasat.entity.Functie;
 import sr.unasat.entity.Werknemer;
 
 import jakarta.ws.rs.*;
@@ -40,6 +41,20 @@ public class WerknemerController {
         public Werknemer addWerknemer(Werknemer werknemer) {
             return werknemerDAO.insertWerknemer(werknemer);
         }
+
+    @POST
+    @Path("/{werknemerid}/functie")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response assignUserToTask(@PathParam("werknemerid") int werknemerId, Functie functie) {
+        Werknemer werknemer = werknemerDAO.findWerknemerById(werknemerId);
+        werknemer.getFunctieSet().add(functie);
+        int rowsUpdated = werknemerDAO.updateWerknemer(werknemer);
+        if (rowsUpdated == 1) {
+            return Response.ok().build();
+        } else {
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+    }
 
         @PUT
         @Path("/update")
